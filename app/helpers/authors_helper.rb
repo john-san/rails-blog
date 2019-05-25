@@ -8,6 +8,7 @@ module AuthorsHelper
 
   def require_login
     unless logged_in?
+      flash.notice = "Please login to proceed"
       redirect_to login_path
     end
   end
