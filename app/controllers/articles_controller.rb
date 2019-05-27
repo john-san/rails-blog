@@ -50,4 +50,12 @@ class ArticlesController < ApplicationController
 
     redirect_to article_path(@article)
   end
+
+  def articles_by_date
+    @month = params[:month]
+    @year = params[:year].to_i
+    @articles = get_collection_by_date(@year, @month)
+    
+  end
+
 end

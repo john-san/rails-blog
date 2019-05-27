@@ -1,0 +1,10 @@
+<% month_numbers = generate_month_list(year) %>
+
+<h3>Articles in <%=  year %></h3>
+<ul>
+  <% month_numbers.each do |month_number| %>
+    <% month_name = convert_month_number_to_name(month_number) %>
+    <% number_of_articles = get_collection_by_date(year, month_name).length %>
+    <li><%= link_to month_name, date_path(:year => year, :month => month_name) %> (<%= number_of_articles %>)</li>
+  <% end %>
+</ul>
