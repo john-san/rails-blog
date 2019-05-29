@@ -25,7 +25,7 @@ module ArticlesHelper
 
   def generate_month_list(year)
     articles = get_articles_by_year(year)
-    articles.map {|a| a.created_at.mon}.uniq
+    articles.map {|a| a.created_at.mon}.uniq.sort
   end
 
   def convert_month_name_to_number(month_name)
